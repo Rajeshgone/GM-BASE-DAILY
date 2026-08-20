@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_APP_URL ??
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+const configuredUrl = process.env.NEXT_PUBLIC_APP_URL?.trim();
+const vercelProductionUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL?.trim();
+
+const siteUrl = configuredUrl ||
+  (vercelProductionUrl
+    ? `https://${vercelProductionUrl}`
     : "http://localhost:3000");
 
 export const metadata: Metadata = {
