@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
@@ -46,20 +47,28 @@ export default function Home() {
 
   useEffect(() => {
     setGmCount(Number(localStorage.getItem("basegm:count") ?? "0"));
-    sdk.actions.ready().catch(() => {
-      // The normal web version runs outside a Farcaster client.
-    });
+    const isMiniApp = new URLSearchParams(window.location.search).get("miniApp") === "true";
+    if (isMiniApp) {
+      sdk.actions.ready().catch(() => {
+        // Continue rendering if a client opens the URL outside Farcaster.
+      });
+    }
   }, []);
 
   async function getProvider(): Promise<EthereumProvider> {
-    try {
-      const miniAppProvider = await sdk.wallet.getEthereumProvider();
-      if (miniAppProvider) return miniAppProvider as EthereumProvider;
-    } catch {
-      // Fall back to the browser wallet when opened as a normal website.
+    // On the Vercel website, use the browser-injected wallet first.
+    if (window.ethereum) return window.ethereum;
+
+    const isMiniApp = new URLSearchParams(window.location.search).get("miniApp") === "true";
+    if (isMiniApp) {
+      try {
+        const miniAppProvider = await sdk.wallet.getEthereumProvider();
+        if (miniAppProvider) return miniAppProvider as EthereumProvider;
+      } catch {
+        // Show the actionable wallet message below.
+      }
     }
 
-    if (window.ethereum) return window.ethereum;
     throw new Error("Open this Mini App in Farcaster or install Coinbase Wallet, MetaMask, or Rabby.");
   }
 
