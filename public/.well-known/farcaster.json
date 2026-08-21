@@ -1,0 +1,22 @@
+{
+  "miniapp": {
+    "version": "1",
+    "name": "BaseGM",
+    "homeUrl": "https://gm-base-daily-1riq.vercel.app/?miniApp=true",
+    "iconUrl": "https://gm-base-daily-1riq.vercel.app/icon.png",
+    "splashImageUrl": "https://gm-base-daily-1riq.vercel.app/splash.png",
+    "splashBackgroundColor": "#F5F8FF",
+    "subtitle": "Daily onchain GM on Base",
+    "description": "Turn your daily GM into a low-cost onchain moment on Base with verifiable ERC-8021 attribution.",
+    "primaryCategory": "social",
+    "tags": ["base", "gm", "onchain", "social"],
+    "heroImageUrl": "https://gm-base-daily-1riq.vercel.app/og.png",
+    "tagline": "Say GM. Make it onchain.",
+    "ogTitle": "BaseGM",
+    "ogDescription": "Say GM. Make it onchain on Base.",
+    "ogImageUrl": "https://gm-base-daily-1riq.vercel.app/og.png",
+    "requiredChains": ["eip155:8453"],
+    "requiredCapabilities": ["wallet.getEthereumProvider"],
+    "canonicalDomain": "gm-base-daily-1riq.vercel.app"
+  }
+}
