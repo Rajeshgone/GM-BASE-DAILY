@@ -9,12 +9,28 @@ const siteUrl = configuredUrl ||
     ? `https://${vercelProductionUrl}`
     : "http://localhost:3000");
 
+const farcasterEmbed = JSON.stringify({
+  version: "1",
+  imageUrl: "https://gm-base-daily-1riq.vercel.app/embed.png",
+  button: {
+    title: "Say GM on Base",
+    action: {
+      type: "launch_miniapp",
+      name: "BaseGM",
+      url: "https://gm-base-daily-1riq.vercel.app/?miniApp=true",
+      splashImageUrl: "https://gm-base-daily-1riq.vercel.app/splash.png",
+      splashBackgroundColor: "#F5F8FF",
+    },
+  },
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "BaseGM — Say GM Onchain",
   description: "Turn your daily GM into a low-cost onchain moment on Base.",
   other: {
     "base:app_id": "6a86bb936ea1f57fed333a3d",
+    "fc:miniapp": farcasterEmbed,
   },
   openGraph: {
     title: "BaseGM — Say GM Onchain",
