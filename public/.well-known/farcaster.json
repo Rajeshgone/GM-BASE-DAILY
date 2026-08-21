@@ -1,4 +1,8 @@
-{
+  "accountAssociation": {
+    "header": "eyJmaWQiOjY3NDUwNiwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDYxOUVCZTAyYzM5MGREMjAwMTcxN0RhMEI5MjQxMGMwMkMzYjhmNUQifQ",
+    "payload": "eyJkb21haW4iOiJnbS1iYXNlLWRhaWx5LTFyaXEudmVyY2VsLmFwcCJ9",
+    "signature": "sT5/L74KRTKI6TpkdAPN0OWdQAZg6XlVQsfu8+PV6x58unY3sTwU7dn17eWR+/wZJTbi0FvGbaie2IBv/3OCIRs="
+  },
   "miniapp": {
     "version": "1",
     "name": "BaseGM",
