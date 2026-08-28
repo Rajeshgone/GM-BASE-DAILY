@@ -15,7 +15,7 @@ declare global {
 }
 
 const BASE_CHAIN_ID = "0x2105";
-const BUILDER_CODE = "bc_mlswv7u2";
+const BUILDER_CODE = "bc_snyv7frr";
 const ERC_8021_MARKER = "80218021802180218021802180218021";
 type AppStatus = "idle" | "connecting" | "ready" | "confirming" | "pending" | "success" | "error";
 
