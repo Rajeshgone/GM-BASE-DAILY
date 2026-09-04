@@ -8,8 +8,8 @@
     "version": "1",
     "name": "BaseGM",
     "homeUrl": "https://gm-base-daily-1riq.vercel.app/?miniApp=true",
-    "iconUrl": "https://gm-base-daily-1riq.vercel.app/icon.png",
-    "splashImageUrl": "https://gm-base-daily-1riq.vercel.app/splash.png",
+    "iconUrl": "https://gm-base-daily-1riq.vercel.app/icon-v2.png",
+    "splashImageUrl": "https://gm-base-daily-1riq.vercel.app/splash-v2.png",
     "splashBackgroundColor": "#F5F8FF",
     "subtitle": "Daily onchain GM on Base",
     "description": "Turn your daily GM into a low-cost onchain moment on Base with verifiable ERC-8021 attribution.",
@@ -24,4 +24,6 @@
     "requiredCapabilities": ["wallet.getEthereumProvider"],
     "canonicalDomain": "gm-base-daily-1riq.vercel.app"
   }
+}
+
 }
